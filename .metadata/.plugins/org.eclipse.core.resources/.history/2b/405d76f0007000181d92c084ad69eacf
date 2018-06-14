@@ -1,0 +1,56 @@
+package com.example.demo.models;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table
+public class Contrato {
+	
+	@Id
+	@GeneratedValue
+	private Long id;
+	@Column
+	private Long duracion;
+	@Column
+	private Long salarioAnual;
+	
+	public Contrato() {
+	}
+
+	public Contrato(Long id, Long duracion, Long salarioAnual) {
+		this.id = id;
+		this.duracion = duracion;
+		this.salarioAnual = salarioAnual;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Long getDuracion() {
+		return duracion;
+	}
+
+	public void setDuracion(Long duracion) {
+		this.duracion = duracion;
+	}
+
+	public Long getSalarioAnual() {
+		return salarioAnual;
+	}
+
+	public void setSalarioAnual(Long salarioAnual) {
+		this.salarioAnual = salarioAnual;
+	}
+	
+	
+	
+}
