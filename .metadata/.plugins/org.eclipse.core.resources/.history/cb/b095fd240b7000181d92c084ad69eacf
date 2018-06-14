@@ -1,0 +1,19 @@
+package com.example.demo.controller;
+
+
+@RestContro
+@Res
+public class MyAppController {
+	@Autowired
+	private NexoDAO nexodao;
+	
+	@RequestMapping("/guardar/{idcliente}/{idcomercial}")
+	public String guardarnexo(@PathVariable(name="idcliente") Long idcliente,
+			@PathVariable(name= "idcomercial") Long idcomercial){
+		Nexo nexo = new Nexo();
+		nexo.setIdCliente(idcliente);
+		nexo.setIdComercial(idcomercial);
+        nexodao.save(nexo);
+        return "Cliente con id "+idcliente+" perteneciente al comecial "+idcomercial+" guadado";
+	}
+}
